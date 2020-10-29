@@ -6,29 +6,26 @@ public class PlayerController : MonoBehaviour
 {
     //Controls the player rigidbody
     private Rigidbody playerRB;
-
     //allows the jumpforce to be changed in the inspector
     public float jumpForce;
-
     //Allows the gravity modifier to be changed in the inspector
     public float gravityMod;
-    
+    //says whether or not the player is grounded
     public bool isGrounded = true;
-
     //Controls wether the game over state is active or not
     public bool gameOver = false;
-
     //Controls the player animation system
     private Animator playerAnim;
-
-    //Controls the partical effect system
+    //Controls the explosion partical effect system
     public ParticleSystem explosionParticle;
-
+    //Controls the dirt partical effect system
     public ParticleSystem dirtParticle;
 
-    //sound effects
+    //sound effects-plays jump sound
     public AudioClip jumpSound;
+    //plays crash sound
     public AudioClip crashSound;
+    //plays music selected through the inspector
     private AudioSource playerAudio;
 
 
@@ -45,6 +42,7 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        //tells the script what to do when the space bar is pressed
         if(Input.GetKeyDown(KeyCode.Space) && isGrounded == true && !gameOver)
         {
             isGrounded = false;
@@ -57,6 +55,7 @@ public class PlayerController : MonoBehaviour
 
     void OnCollisionEnter(Collision other)
     {
+        //tells the script when to play the dirt partical effect
         isGrounded = true;
         dirtParticle.Play();
 
@@ -66,6 +65,7 @@ public class PlayerController : MonoBehaviour
         }
         else if(other.gameObject.CompareTag("Obstacle"))
         {
+            //tells the script what to do when the player triggers a game over state
             gameOver = true;
             Debug.Log("Game Over");
             explosionParticle.Play();

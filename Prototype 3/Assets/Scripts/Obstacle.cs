@@ -5,6 +5,7 @@ using UnityEngine;
 
 public class Obstacle : MonoBehaviour
 {
+    //sets speed of object
     public float speed = 10f;
 
     // Update is called once per frame
