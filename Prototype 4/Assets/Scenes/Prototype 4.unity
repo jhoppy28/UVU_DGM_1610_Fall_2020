@@ -183,6 +183,10 @@ PrefabInstance:
       propertyPath: m_StaticEditorFlags
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2010543769895121089, guid: 3fd5555088952419ebf0eb82e9096fa5, type: 3}
+      propertyPath: m_Materials.Array.size
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7382815964509602841, guid: 3fd5555088952419ebf0eb82e9096fa5, type: 3}
       propertyPath: m_LocalPosition.x
       value: -7
@@ -259,6 +263,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemyPrefab: {fileID: 8143164047516189554, guid: 27020c386f304cb4980af72263632f02, type: 3}
+  powerUpPrefab: {fileID: 8214397412816299316, guid: 76f0a344a5d18d148bcb13a6177ff70d, type: 3}
+  enemyCount: 3
+  waveNumber: 3
 --- !u!4 &474125712
 Transform:
   m_ObjectHideFlags: 0
@@ -725,7 +732,7 @@ MonoBehaviour:
   speed: 500
   hasPowerup: 0
   focalPoint: {fileID: 94367782}
-  powerupIndicator: {fileID: 0}
+  powerupIndicator: {fileID: 8214397412816299316, guid: 76f0a344a5d18d148bcb13a6177ff70d, type: 3}
 --- !u!1001 &842507682495900361
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -743,7 +750,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8214397412816129008, guid: 76f0a344a5d18d148bcb13a6177ff70d, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 5.0412316
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 8214397412816129008, guid: 76f0a344a5d18d148bcb13a6177ff70d, type: 3}
       propertyPath: m_LocalRotation.x
