@@ -27,5 +27,10 @@ public class PlayerController : MonoBehaviour
         //Move the player left and right based on horizontal input
         transform.Translate(Vector3.right * horizontalInput * Time.deltaTime * speed);
 
+        if (transform.position.y < -10)
+        {
+            Destroy(gameObject);
+        }
+
     }
 }

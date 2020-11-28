@@ -4,15 +4,42 @@ using UnityEngine;
 
 public class SpawnManager : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    public GameObject enemyPrefab;
+
+    private float spawnRangeX = 10;
+    private float spawnZMin = -1;
+    private float spawnZMax = 10;
+
+    public int enemyCount;
+    public int waveCount = 1;
+    public float enemySpeed = 50; 
 
     // Update is called once per frame
     void Update()
     {
-        
+        enemyCount = GameObject.FindGameObjectsWithTag("Enemy").Length;
+
+        if (enemyCount == 0)
+        {
+            SpawnEnemyWave(waveCount);
+        }
+    }
+
+    Vector3 GenerateSpawnPosition()
+    {
+        float xPos = Random.Range(-spawnRangeX, spawnRangeX);
+        float zPos = Random.Range(spawnZMin, spawnZMax);
+        return new Vector3(xPos, 0, zPos);
+    }
+
+    void SpawnEnemyWave(int enemiesToSpawn)
+    {
+        for (int i = 0; i < enemiesToSpawn; i++)
+        {
+            Instantiate(enemyPrefab, GenerateSpawnPosition(), enemyPrefab.transform.rotation);
+        }
+
+        waveCount++;
+        enemySpeed += 25;
     }
 }
