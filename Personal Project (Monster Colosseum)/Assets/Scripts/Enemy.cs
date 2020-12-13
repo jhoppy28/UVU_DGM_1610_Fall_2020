@@ -22,7 +22,7 @@ public class Enemy : MonoBehaviour
         enemyRb.AddForce(lookDirection * speed);
 
         //Destroys enemy after falling off ledge
-        if(transform.position.y < -10)
+        if(transform.position.y < -5)
         {
             Destroy(gameObject);
         }
