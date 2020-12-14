@@ -6,9 +6,9 @@ public class SpawnManager : MonoBehaviour
 {
     public GameObject enemyPrefab;
 
-    private float spawnRangeX = 10;
-    private float spawnZMin = 1;
-    private float spawnZMax = 10;
+    private float spawnRangeX = 0;
+    private float spawnZMin = -25;
+    private float spawnZMax = 2;
 
     public int enemyCount;
     public int waveCount = 1;
